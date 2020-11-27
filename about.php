@@ -27,7 +27,7 @@
     </div>
     <div class="col-md-4">
       <div class="content-section">
-        <h3>Our Sidebar</h3>
+        <h3>Sidebar</h3>
         <p class='text-muted'>You can put any information here you'd like.
           <a class ="list-group-item list-group-item-light" href="links.php">Links</a>
          

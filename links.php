@@ -22,7 +22,7 @@
      <main role="main" class="container">
      <a class ="list-group-item list-group-item-light" href="http://041er-blj.ch/2020/alfacalcastro/blog/">Link Alejandro</a>
 <a class ="list-group-item list-group-item-light" href="http://041er-blj.ch/2020/gifederspiel/blog/">Link Gian</a>
-<a class ="list-group-item list-group-item-light" href="http://041er-blj.ch/2020/rohänggi/blog/">Link Rouven</a>
+<a class ="list-group-item list-group-item-light" href="http://041er-blj.ch/2020/rohoenggi/blog/">Link Rouven</a>
 <a class ="list-group-item list-group-item-light" href="http://041er-blj.ch/2020/nobuchs/blog/">Link Noah</a>
 <a class ="list-group-item list-group-item-light" href="http://041er-blj.ch/2020/listuder/blog/">Link Lian</a>
 <a class ="list-group-item list-group-item-light" href="http://041er-blj.ch/2020/dakapka/blog/">Link Dawid</a>

@@ -1,20 +1,22 @@
 <?php
      $user = 'root';
      $password = '';
-     $title = ''; 
+    
 
      $pdo = new PDO('mysql:host=localhost;dbname=blog', $user, $password, [
           PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
           PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
      ]);
+          $query = 'select * from posts limit 3';
 
-     if($_SERVER['REQUEST_METHOD'] === 'POST') {
-          $description = $_POST['post-text'];
-          $userName = $_POST  ['username'];
+          if (($_GET['action'] ?? '') === 'all'){
+               $query = 'select * from posts order by created_at desc';
+          }
+          $stmt = $pdo->query($query);
+          $rows = $stmt->fetchAll)();
 
-          $stmt = $pdo->prepare("INSERT INTO `posts` (created_at, title, description, username) VALUES(now(), :title ,:desc, :user) ");
-          $stmt->execute([':title' => $title, ':desc' => $description, ':user' => $userName]);
-     }
+          foreach($rows as $row){
+               echo $row["created_by"] . ', Post' . $row["description"] . '<br>';         }
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +41,12 @@
      <main role="main" class="container">
 
      <h1>Create a new Post</h1>
-     
-     <form action="newpost.php" method="POST">
-          <input type="text" name="username" placeholder="Your Name"/> 
-          <textarea name="post-text" placeholder="Write your post."></textarea>
+     <br>
+     <br>
+     <form class="postform" action="newpost.php" method="POST">
+          <input class="posttitle" type="text" name="post-title" placeholder="Title" size="35"/><br><br>
+          <input class="usern" type="text" name="username" placeholder="Your Name" size="30"/> <br><br>
+          <textarea name="post-text" placeholder="Write your post." rows="10" cols="80"></textarea><br>
           <button type="submit" name="Add-Post">Add Post</button>   
      </form>
 

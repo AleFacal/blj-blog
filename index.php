@@ -1,19 +1,27 @@
-<?php 
+<?php
 
-$user = 'root';
+  try{
+     $user = 'root';
      $password = '';
-     $title = ''; 
+    
 
      $pdo = new PDO('mysql:host=localhost;dbname=blog', $user, $password, [
           PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
           PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
      ]);
+  }
+          $query = 'select * from posts limit 3';
 
-     $stmt = $pdo->query('SELECT * FROM `posts`');
-     foreach($stmt->fetchAll() as $x) {
-         var_dump($x);
-     }
-?> 
+          if (($_GET['action'] ?? '') === 'all'){
+               $query = 'select * from posts order by created_at desc';
+          }
+          $stmt = $pdo->query($query);
+          $rows = $stmt->fetchAll)();
+
+          foreach($rows as $row){
+               echo $row["created_by"] . ', Post' . $row["description"] . '<br>';         }
+?>
+        
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +44,9 @@ $user = 'root';
 
 
      <main role="main" class="container">
+     <?php
+
+?>
   <div class="row">
     <div class="col-md-8">
      

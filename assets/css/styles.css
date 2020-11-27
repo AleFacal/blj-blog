@@ -11,6 +11,9 @@ body {
   ul {
     margin: 0;
   }
+  li{
+    margin-bottom: 20px;
+  }
   
   .bg-steel {
     background-color: #5f788a;
@@ -29,6 +32,15 @@ body {
   
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
+  }
+
+  .postform{
+    padding: 10px 20px;
+    border: 2px solid #dddddd;
+
+  }
+  .posttitle{
+    margin-bottom: 20px;
   }
   
   .content-section {
